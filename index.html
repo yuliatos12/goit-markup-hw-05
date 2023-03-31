@@ -34,7 +34,7 @@
           <div>
             <ul class="nav-list list">
               <li class="item">
-                <a href="./index.html" class="link">Studio</a>
+                <a href="./index.html" class="link nav-active">Studio</a>
               </li>
               <li class="item">
                 <a href="./portfolio.html" class="link">Portfolio</a>
@@ -67,7 +67,7 @@
           <div class="container">
             <h1 class="hero-title">Effective Solutions for Your Business</h1>
             <div class="btn-container">
-              <button type="button" class="hero-btn">Order Service</button>
+              <button data-modal-open type="button" class="hero-btn">Order Service</button>
             </div>
           </div>
         </div>
@@ -471,6 +471,15 @@
           </ul>
         </div>
       </div>
+
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button data-modal-close type="button" class="close-btn">&#215;</button>
+
+        </div>
+
+      </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
