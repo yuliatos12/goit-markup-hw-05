@@ -125,7 +125,7 @@ header {
 .nav-active::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   height: 4px;
   width: 100%;
   border-radius: 2px;
@@ -233,9 +233,7 @@ header {
   pointer-events: none;
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
-}
+
 .modal {
   position: absolute;
   top: 50%;
@@ -251,7 +249,9 @@ header {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
-
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0.5);
+}
 .close-btn {
   position: absolute;
   top: 24px;
@@ -583,40 +583,24 @@ img {
 }
 
 .card-thumb {
-  position: relative;
-  
+  position: relative; 
+  overflow: hidden;
 }
-
-.card-item-link:hover .overlay-text {
-  opacity: 1;
-}
-
-.card-thumb::before {
-  display: inline-block;
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: var(--hover-color);
-  opacity: 0;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-item-link:hover .card-thumb::before {
-  opacity: 1;
-}
-
-
 .overlay-text {
-  display: block;
   position: absolute;
-  top: 40px;
-  left: 32px;
-  width: 296px;
-  color: var(--footer-text-color);
+  top: 0;
+  font-size: 16px;
   line-height: 1.5;
-  opacity: 0;
-  transition-duration: 250ms;
+  color: var(--footer-text-color);
+  background-color: var(--hover-color);
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 100%;
+  transform: translateY(100%);
+   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-item-link:hover .overlay-text {
+transform: translate(0);
 }
