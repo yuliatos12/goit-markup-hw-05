@@ -528,7 +528,7 @@ header {
   box-shadow: 0px 3px 1px var(--box-shadow-one),
     0px 2px 1px var(--box-shadow-two), 0px 2px 2px var(--box-shadow-three);
   border-radius: 4px;
-  border: 1px solid var(--button-border);
+border-color: transparent;
   color: var(--hero-color);
 }
 
